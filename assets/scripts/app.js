@@ -24,7 +24,6 @@ function enterLogs() {
 
 // to print the result and execute eneterlogs
 function operation(operator) {
-  calculationDescription = `${currentResult} ${operator} ${input}`;
   outputResult(currentResult, calculationDescription);
   enterLogs();
 }
@@ -37,6 +36,7 @@ function getUserInput() {
 // function for addition
 function add() {
   getUserInput();
+  calculationDescription = `${currentResult} + ${input}`;
   currentResult = currentResult + input;
   operation("+");
 }
@@ -44,6 +44,7 @@ function add() {
 //  Function for subtraction
 function subtract() {
   getUserInput();
+  calculationDescription = `${currentResult} - ${input}`;
   currentResult = currentResult - input;
   operation("+");
 }
@@ -51,6 +52,7 @@ function subtract() {
 //  Function for multiplication
 function multiply() {
   getUserInput();
+  calculationDescription = `${currentResult} * ${input}`;
   currentResult = currentResult * input;
   operation("+");
 }
@@ -58,6 +60,7 @@ function multiply() {
 //  Function for division
 function divide() {
   getUserInput();
+  calculationDescription = `${currentResult} / ${input}`;
   currentResult = currentResult + input;
   operation("+");
 }

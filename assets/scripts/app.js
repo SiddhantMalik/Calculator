@@ -23,7 +23,7 @@ function enterLogs() {
 }
 
 // to print the result and execute eneterlogs
-function operation(operator) {
+function operations(operator) {
   outputResult(currentResult, calculationDescription);
   enterLogs();
 }
@@ -33,40 +33,61 @@ function getUserInput() {
   input = getUserNumberInput();
 }
 
-// function for addition
-function add() {
+/* // // function for addition
+// function add() {
+//   getUserInput();
+//   calculationDescription = `${currentResult} + ${input}`;
+//   currentResult = currentResult + input;
+//   operation("+");
+// }
+
+// //  Function for subtraction
+// function subtract() {
+//   getUserInput();
+//   calculationDescription = `${currentResult} - ${input}`;
+//   currentResult = currentResult - input;
+//   operation("-");
+// }
+
+// //  Function for multiplication
+// function multiply() {
+//   getUserInput();
+//   calculationDescription = `${currentResult} * ${input}`;
+//   currentResult = currentResult * input;
+//   operation("*");
+// }
+
+// //  Function for division
+// function divide() {
+//   getUserInput();
+//   calculationDescription = `${currentResult} / ${input}`;
+//   currentResult = currentResult + input;
+//   operation("/");
+// } */
+
+function calculate(operation){
   getUserInput();
-  calculationDescription = `${currentResult} + ${input}`;
+  if (operation === 'ADD'){
+    calculationDescription = `${currentResult} + ${input}`;
   currentResult = currentResult + input;
-  operation("+");
-}
-
-//  Function for subtraction
-function subtract() {
-  getUserInput();
-  calculationDescription = `${currentResult} - ${input}`;
-  currentResult = currentResult - input;
-  operation("+");
-}
-
-//  Function for multiplication
-function multiply() {
-  getUserInput();
-  calculationDescription = `${currentResult} * ${input}`;
-  currentResult = currentResult * input;
-  operation("+");
-}
-
-//  Function for division
-function divide() {
-  getUserInput();
-  calculationDescription = `${currentResult} / ${input}`;
-  currentResult = currentResult + input;
-  operation("+");
+  operations("+");
+  }else if (operation === 'SUBTRACT'){
+    calculationDescription = `${currentResult} - ${input}`;
+    currentResult = currentResult - input;
+    operations("-");
+  }else if(operation === 'MULTIPLY'){
+    calculationDescription = `${currentResult} * ${input}`;
+    currentResult *= input;
+    operations("*")
+  }else if (operation === 'DIVIDE'){
+    calculationDescription = `${currentResult} / ${input}`;
+    currentResult = currentResult + input;
+    operations("/");
+  }
 }
 
 // button name.addEventListener("nature", function);
-addBtn.addEventListener("click", add);
-subtractBtn.addEventListener("click", subtract);
-multiplyBtn.addEventListener("click", multiply);
-divideBtn.addEventListener("click", divide);
+addBtn.addEventListener("click", calculate('ADD'));
+subtractBtn.addEventListener("click", calculate('SUBTRACT'));
+multiplyBtn.addEventListener("click",calculate('MULTIPLY'));
+divideBtn.addEventListener("click", calculate('DIVIDE'));
